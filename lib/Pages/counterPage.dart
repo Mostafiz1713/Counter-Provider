@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_counter_manage/Pages/decrement.dart';
+import 'package:provider_counter_manage/Pages/increment.dart';
 import 'package:provider_counter_manage/Providers/counterProvider.dart';
 
 class CounterPage extends StatefulWidget {
@@ -16,8 +18,15 @@ class _CounterPageState extends State<CounterPage> {
     return Scaffold(
       body: Container(
         child: Center(
-          child: Text(
-            counterProvider.counter.toString(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Current Value : ' + counterProvider.counter.toString(),
+              ),
+              Increment(),
+              Decrement(),
+            ],
           ),
         ),
       ),
